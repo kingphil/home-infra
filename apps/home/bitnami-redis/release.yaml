@@ -6,7 +6,7 @@ metadata:
 spec:
   values:
     global:
-      storageClass: "nfs-client-persist"
+      storageClass: nfs-csi-retain
 
     image:
       registry: docker.io
@@ -25,7 +25,7 @@ spec:
         type: ClusterIP
       persistence:
         enabled: true
-        storageClass: "nfs-client-persist"
+        storageClass: nfs-csi-retain
         size: 8Gi
 
     replica:

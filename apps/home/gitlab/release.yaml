@@ -13,8 +13,8 @@ spec:
     namespace: bitnami-redis
   - name: minio
     namespace: minio-operator
-  - name: nfs-subdir-external-provisioner
-    namespace: nfs-sep
+  - name: csi-driver-nfs
+    namespace: csi-driver-nfs
   values:
     global:
       edition: ce
@@ -100,7 +100,7 @@ spec:
     gitlab:
       gitaly:
         persistence:
-          storageClass: nfs-client-persist
+          storageClass: nfs-csi-retain
           size: 50Gi
       gitlab-shell:
         minReplicas: 1
@@ -122,7 +122,7 @@ spec:
 
     minio:
       persistence:
-        storageClass: nfs-client-persist
+        storageClass: nfs-csi-retain
         size: 10Gi
     registry:
       storage:

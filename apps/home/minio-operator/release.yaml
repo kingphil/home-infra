@@ -8,7 +8,7 @@ spec:
     mode: standalone
     existingSecret: root-user
     persistence:
-      storageClass: nfs-client-persist
+      storageClass: nfs-csi-retain
       size: 50Gi
 
     ingress:
