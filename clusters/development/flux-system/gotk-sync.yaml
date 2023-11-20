@@ -8,7 +8,7 @@ metadata:
 spec:
   interval: 1m0s
   ref:
-    branch: main
+    branch: 2023-11.velero
   secretRef:
     name: flux-system
   url: https://github.com/kingphil/home-infra.git
