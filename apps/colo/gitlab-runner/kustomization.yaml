@@ -6,6 +6,7 @@ metadata:
 resources:
   - ../../base/gitlab-runner/
   - sealed.secret.runner-token.yaml
+  - sealed.secret.s3access.yaml
 patches:
   - path: release.yaml
     target:
