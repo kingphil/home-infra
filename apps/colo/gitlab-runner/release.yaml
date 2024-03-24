@@ -10,4 +10,23 @@ spec:
     ## https://gitlab.com/groups/pekware/-/runners
     runners:
       secret: gitlab-runner
+      cache:
+        secretName: s3access
+
+      config: |
+        [[runners]]
+          [runners.kubernetes]
+            namespace = "{{.Release.Namespace}}"
+            image = "ubuntu:22.04"
+          [runners.cache]
+            Type = "s3"
+            Path = "runner"
+            Shared = true
+            [runners.cache.s3]
+              ServerAddress = "minio.pekware.club"
+              BucketName = "gitlab-runner-cache"
+              BucketLocation = "us-east-1"
+              Insecure = false
+              AuthenticationType = "access-key"
+
     concurrent: 10
