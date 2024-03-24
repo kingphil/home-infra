@@ -10,3 +10,4 @@ spec:
     ## https://gitlab.com/groups/pekware/-/runners
     runners:
       secret: gitlab-runner
+    concurrent: 10
